@@ -4,24 +4,35 @@ import time
 
 
 srt = time.time()
-walks = [0]
+all_walk = []
 
-for x in range(100):
-    dice = np.random.randint(1, 7)
-    step = walks[-1]
+for i in range(100):
+    random_walk = [0]
 
-    if dice <= 2:
-        step = max(0, step-1)
-    elif dice <= 5:
-        step += 1
-    else:
-        step += np.random.randint(1, 7)
+    for x in range(1000):
+        step = random_walk[-1]
+        dice = np.random.randint(1, 7)
 
-    walks.append(step)
+        if dice <= 2:
+            step -= 1
+        elif dice <= 5:
+            step += 1
+        else:
+            step += np.random.randint(1, 7)
 
+        if np.random.rand() < 0.001:
+            step = 0
 
-plt.plot(walks)
+        random_walk.append(step)
+
+    all_walk.append(random_walk)
+
+aw = np.array(all_walk)
+awt = aw.transpose()
+
+plt.clf()
+plt.plot(awt)
 end = time.time()
-
+plt.show()
 print(f"Time To Execute this code is {end-srt}")
 plt.show()
