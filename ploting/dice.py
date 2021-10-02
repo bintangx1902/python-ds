@@ -30,9 +30,9 @@ for i in range(100):
 aw = np.array(all_walk)
 awt = aw.transpose()
 
-plt.clf()
-plt.plot(awt)
+ends = awt[-1]
+plt.hist(ends)
 end = time.time()
-plt.show()
+
 print(f"Time To Execute this code is {end-srt}")
 plt.show()
