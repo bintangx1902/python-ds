@@ -1,5 +1,5 @@
 import requests
-from matplotlib import pyplot as p
+from matplotlib import pyplot as plt
 import pandas as pd
 import numpy as np
 import time
@@ -32,7 +32,11 @@ while len_list != 0:
             # print(data[index][var_name])
             globals()[var_name].append(data[index][var_name])
 
-print(head_list)
+
+plt.scatter(Provinsi, Kasus_Posi)
+plt.grid(True)
+
 
 end = time.time()
 print(f"\n times need : {end - start}")
+plt.show()
