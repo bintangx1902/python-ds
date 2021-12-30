@@ -57,3 +57,16 @@ def high_freq():
         return active
 
 
+if __name__ == '__main__':
+    while True:
+        print("1. how many integers when it calculated \n2. highest frequency word \n3. word_start \n4. exit")
+        menu = int(input(">>> "))
+
+        if menu==1:
+            print(total_num())
+        elif menu==2:
+            print(high_freq())
+        elif menu==4:
+            break
+        else:
+            print("give as the instruction! ")
