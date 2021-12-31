@@ -22,14 +22,14 @@ for x in col_data:
     print(x)
 
 
-def sorting(klass):
-    klass.sort(
+def sorting(col_data):
+    col_data.sort(
         key=lambda e: (e['point'][0] * 3 + 1 * e['point'][2] - 0 * e['point'][1]) and e['point'][-2] - e['point'][-1])
 
 
 # def selisih_gol() :
-#     global klass
-#     klass.sort(key=lambda goal:goal['point'][-2] - goal['point'][-1])
+#     global col_data
+#     col_data.sort(key=lambda goal:goal['point'][-2] - goal['point'][-1])
 # def league_winner1():
 #     for x in reversed(sorting()):
 #         point = sum(x['point']) - x['point'][2] - x['point'][4]
@@ -43,22 +43,22 @@ def sorting(klass):
 
 
 def bbs():
-    n = len(arr)
+    n = len(col_data)
 
-    # Traverse through all array elements
+    # Traverse through all col_dataay elements
     for i in range(n - 1):
         # range(n) also work but outer loop will repeat one time more than needed.
 
         # Last i elements are already in place
         for j in range(0, n - i - 1):
 
-            # traverse the array from 0 to n-i-1
+            # traverse the col_dataay from 0 to n-i-1
             # Swap if the element found is greater
             # than the next element
 
             """ [. . . .6] > [. . . . .3] """
-            if arr[j] > arr[j + 1]:
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+            if col_data[j] > col_data[j + 1]:
+                col_data[j], col_data[j + 1] = col_data[j + 1], col_data[j]
 
 
 # def league_winner2():
@@ -68,7 +68,7 @@ def bbs():
 #    for x in reversed(sorting()) :
 #        if x
 #        print(x)
-# global klass
+# global col_data
 
 # jazz = []
 
@@ -87,9 +87,9 @@ def bbs():
 
 
 def search():
-    global klass
+    global col_data
     x = 50
-    for li in klass:
+    for li in col_data:
         point = 3 * li['point'][0] + li['point'][2] * 1
         print(point)
         if point <= x:
@@ -98,26 +98,26 @@ def search():
 
 # print(league_winner2())
 print("")
-sorting(klass)
+sorting(col_data)
 data = []
-panjang = len(klass)
-for i, e in enumerate(klass):
+panjang = len(col_data)
+for i, e in enumerate(col_data):
 
     if i == panjang - 1:
-        diff = klass[i]['point'][-2] - klass[i]['point'][-1]
-        diff2 = klass[i - 1]['point'][-2] - klass[i - 1]['point'][-1]
+        diff = col_data[i]['point'][-2] - col_data[i]['point'][-1]
+        diff2 = col_data[i - 1]['point'][-2] - col_data[i - 1]['point'][-1]
 
         if diff > diff2:
-            data.append(klass[i])
-            data.append(klass[i - 1])
+            data.append(col_data[i])
+            data.append(col_data[i - 1])
 
     else:
-        diff = klass[i]['point'][-2] - klass[i]['point'][-1]
-        diff2 = klass[i + 1]['point'][-2] - klass[i - 1]['point'][-1]
+        diff = col_data[i]['point'][-2] - col_data[i]['point'][-1]
+        diff2 = col_data[i + 1]['point'][-2] - col_data[i - 1]['point'][-1]
 
         if diff > diff2:
-            data.append(klass[i])
-            data.append(klass[i + 1])
+            data.append(col_data[i])
+            data.append(col_data[i + 1])
 
 for e in data:
     pointss = e['point'][0] * 3 + 1 * e['point'][2] - 0 * e['point'][1]
@@ -128,4 +128,4 @@ for e in data:
 #     pointss = e['point'][0] * 3 + 1 * e['point'][2] - 0 * e['point'][1]
 #     print(f"{e} - point : {pointss}")
 #     if e['point'][-2] > e['point'][-1]:
-#         data.append(klass[])
+#         data.append(col_data[])
