@@ -1,8 +1,11 @@
-def print_alpha_nums(abc_list, num_list):
-    for char in abc_list:
-        for num in num_list:
-            print(char, num)
-    return
+import os, requests, pandas, jwt
 
+url = 'https://presence.pythonanywhere.com/api/login'
+data = {'username': 'admin', 'password': 'admin'}
 
-print(print_alpha_nums(['a', 'b', 'c'], [1, 2, 3]))
+r = requests.post(url, data=data)
+raw = r.json()
+token = raw['jwt']
+
+ids = jwt.decode(token, 'secret', algorithms='HS256')
+print(ids)
