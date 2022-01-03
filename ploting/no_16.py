@@ -18,13 +18,33 @@ for d in data:
     append_data(name, point)
 
 
+def point(point_list):
+    return point_list[0]*3 + point_list[2]*1 - point_list[1]*0
+
+
+def sort_data(arr):
+    n = len(col_data)
+
+    for i in range(n - 1):
+        for j in range(0, n - i - 1):
+            a = point(arr[j]['point'])
+            b = point(arr[j+1]['point'])
+            if a > b:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+
+
+print("real data is :")
 for x in col_data:
     print(x)
 
+sort_data(col_data)
+print("sorterd data is :")
+for x in reversed(col_data):
+    print(x)
 
-def sorting(col_data):
-    col_data.sort(
-        key=lambda e: (e['point'][0] * 3 + 1 * e['point'][2] - 0 * e['point'][1]) and e['point'][-2] - e['point'][-1])
+# def sorting(col_data):
+#     col_data.sort(
+#         key=lambda e: (e['point'][0] * 3 + 1 * e['point'][2] - 0 * e['point'][1]) and e['point'][-2] - e['point'][-1])
 
 
 # def selisih_gol() :
@@ -41,24 +61,24 @@ def sorting(col_data):
 #         return True
 #     return False
 
-
-def bbs():
-    n = len(col_data)
-
-    # Traverse through all array elements
-    for i in range(n - 1):
-        # range(n) also work but outer loop will repeat one time more than needed.
-
-        # Last i elements are already in place
-        for j in range(0, n - i - 1):
-
-            # traverse the array from 0 to n-i-1
-            # Swap if the element found is greater
-            # than the next element
-
-            """ [. . . .6] > [. . . . .3] """
-            if col_data[j] > col_data[j + 1]:
-                col_data[j], col_data[j + 1] = col_data[j + 1], col_data[j]
+#
+# def bbs():
+#     n = len(col_data)
+#
+#     # Traverse through all array elements
+#     for i in range(n - 1):
+#         # range(n) also work but outer loop will repeat one time more than needed.
+#
+#         # Last i elements are already in place
+#         for j in range(0, n - i - 1):
+#
+#             # traverse the array from 0 to n-i-1
+#             # Swap if the element found is greater
+#             # than the next element
+#
+#             """ [. . . .6] > [. . . . .3] """
+#             if col_data[j] > col_data[j + 1]:
+#                 col_data[j], col_data[j + 1] = col_data[j + 1], col_data[j]
 
 
 # def league_winner2():
@@ -85,43 +105,43 @@ def bbs():
 # league = [x['name'] for x in reversed(sorting())]
 # return league
 
-
-def search():
-    global col_data
-    x = 50
-    for li in col_data:
-        point = 3 * li['point'][0] + li['point'][2] * 1
-        print(point)
-        if point <= x:
-            print(f"{li} - total point : {point}")
+#
+# def search():
+#     global col_data
+#     x = 50
+#     for li in col_data:
+#         point = 3 * li['point'][0] + li['point'][2] * 1
+#         print(point)
+#         if point <= x:
+#             print(f"{li} - total point : {point}")
 
 
 # print(league_winner2())
-print("")
-sorting(col_data)
-data = []
-panjang = len(col_data)
-for i, e in enumerate(col_data):
-
-    if i == panjang - 1:
-        diff = col_data[i]['point'][-2] - col_data[i]['point'][-1]
-        diff2 = col_data[i - 1]['point'][-2] - col_data[i - 1]['point'][-1]
-
-        if diff > diff2:
-            data.append(col_data[i])
-            data.append(col_data[i - 1])
-
-    else:
-        diff = col_data[i]['point'][-2] - col_data[i]['point'][-1]
-        diff2 = col_data[i + 1]['point'][-2] - col_data[i - 1]['point'][-1]
-
-        if diff > diff2:
-            data.append(col_data[i])
-            data.append(col_data[i + 1])
-
-for e in data:
-    pointss = e['point'][0] * 3 + 1 * e['point'][2] - 0 * e['point'][1]
-    print(f"{e} - point : {pointss}")
+# print("")
+# sorting(col_data)
+# data = []
+# panjang = len(col_data)
+# for i, e in enumerate(col_data):
+#
+#     if i == panjang - 1:
+#         diff = col_data[i]['point'][-2] - col_data[i]['point'][-1]
+#         diff2 = col_data[i - 1]['point'][-2] - col_data[i - 1]['point'][-1]
+#
+#         if diff > diff2:
+#             data.append(col_data[i])
+#             data.append(col_data[i - 1])
+#
+#     else:
+#         diff = col_data[i]['point'][-2] - col_data[i]['point'][-1]
+#         diff2 = col_data[i + 1]['point'][-2] - col_data[i - 1]['point'][-1]
+#
+#         if diff > diff2:
+#             data.append(col_data[i])
+#             data.append(col_data[i + 1])
+#
+# for e in data:
+#     pointss = e['point'][0] * 3 + 1 * e['point'][2] - 0 * e['point'][1]
+#     print(f"{e} - point : {pointss}")
 
 # for e in sorting():
 #     data = []
