@@ -51,6 +51,14 @@ print("sorterd data is :")
 for x in reversed(col_data):
     print(x)
 
+
+def league_winner():
+    return col_data[-1]['name']
+
+
+""" or you can use like this """
+print(col_data[-1]['name'])
+print(f"the winner is : {league_winner()}")
 # def sorting(col_data):
 #     col_data.sort(
 #         key=lambda e: (e['point'][0] * 3 + 1 * e['point'][2] - 0 * e['point'][1]) and e['point'][-2] - e['point'][-1])
