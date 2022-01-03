@@ -18,8 +18,17 @@ for d in data:
     append_data(name, point)
 
 
-def point(point_list):
-    return point_list[0]*3 + point_list[2]*1 - point_list[1]*0
+def point(point_1, point_2):
+    first = point_1[0]*3 + point_1[2]*1 - point_1[1]*0
+    second = point_1[0]*3 + point_1[2]*1 - point_1[1]*0
+    if first > second:
+        return True
+    elif first == second:
+        goal_1 = point_1[-2] - point_1[-1]
+        goal_2 = point_2[-2] - point_2[-1]
+        if goal_1 > goal_2:
+            return True
+    return False
 
 
 def sort_data(arr):
@@ -27,9 +36,9 @@ def sort_data(arr):
 
     for i in range(n - 1):
         for j in range(0, n - i - 1):
-            a = point(arr[j]['point'])
-            b = point(arr[j+1]['point'])
-            if a > b:
+            a = arr[j]['point']
+            b = arr[j+1]['point']
+            if point(a, b):
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
 
 
