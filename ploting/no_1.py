@@ -20,17 +20,23 @@ for x in raw:
     point2 = eval(points[1])
     append_data(name1, name2, point1, point2)
 
-
 name_list = []
 
 for p in point_list:
-    name_list.append(p['player1'])
-    name_list.append(p['player2'])
+    name_list.append(p['player1']) if p['point1'] > 0 else ''
+    name_list.append(p['player2']) if p['point2'] > 0 else ''
 
 name_copy = name_list.copy()
 name_list = list(set(name_list))
 
-
+""" uncomment this section if u want to know the how many players win and draw (in1) """
 # for n in name_list:
 #     print(f"{n} - {name_copy.count(n)}")
-print(name_copy.count('morphy'))
+
+
+""" b question returning how many players in data """
+def player():
+    return len(name_list)
+
+
+print(player())
