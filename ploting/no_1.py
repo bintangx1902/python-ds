@@ -1,3 +1,5 @@
+import os
+
 point_list = []
 
 
@@ -39,13 +41,11 @@ def player():
     return len(name_list)
 
 
-print(f"total players : {player()}")
-
-
 def keys(elem):
     return float(elem[-1])
 
 
+""" c question answer is this """
 def winner():
     play_point = []
 
@@ -64,4 +64,19 @@ def winner():
         print(po)
 
 
-winner()
+if __name__ == '__main__':
+    while True:
+        print("1. show how many players \n2.show all players with their point sorted \n3. clear \n4. exit")
+        menu = int(input(">>> "))
+
+        if menu == 1:
+            player()
+        elif menu == 2:
+            winner()
+        elif menu == 3:
+            # change this if u dont use windows, such as linux('clear') or mac
+            os.system('cls')
+        elif menu == 4:
+            break
+        else:
+            print("input the menu same as the available menu only! ")
