@@ -39,4 +39,23 @@ def player():
     return len(name_list)
 
 
-print(player())
+print(f"total players : {player()}")
+
+
+def winner():
+    play_point = []
+
+    for name in name_list:
+        point = 0
+        # assume index 0
+        for list_p in point_list:
+            # assume index 1
+            point += float(list_p['point1']) if list_p['player1'] == name else 0
+            point += float(list_p['point2']) if list_p['player2'] == name else 0
+        play_point.append(point)
+
+    for index, value in enumerate(play_point):
+        print(f"{name_list[index]} - points : {value}")
+
+
+winner()
