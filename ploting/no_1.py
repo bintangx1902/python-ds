@@ -42,6 +42,10 @@ def player():
 print(f"total players : {player()}")
 
 
+def keys(elem):
+    return float(elem[-1])
+
+
 def winner():
     play_point = []
 
@@ -54,8 +58,10 @@ def winner():
             point += float(list_p['point2']) if list_p['player2'] == name else 0
         play_point.append(point)
 
-    for index, value in enumerate(play_point):
-        print(f"{name_list[index]} - points : {value}")
+    pointer = [f"{name_list[index]} - points : {value}" for index, value in enumerate(play_point)]
+    pointer.sort(reverse=False, key=keys)
+    for po in pointer:
+        print(po)
 
 
 winner()
