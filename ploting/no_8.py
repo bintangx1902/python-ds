@@ -9,7 +9,7 @@ def append_data(nim, presence):
     col_data.append(dict_data)
 
 
-with open('test.txt', 'r') as f:
+with open('number/8.txt', 'r') as f:
     data = f.read().splitlines()
 
 for x in data:
