@@ -1,18 +1,41 @@
 import os
 
+# col data ini bertipe list, dan inner data nya pun akan kita isikan dengan list!, jadi bisa dibilang 2d array supaya nnati bisa kita olah dengan mudah
 col_data = []
 
+# dengan metode 'with open() as variable' ini memungkinkan kita memabaca file lebih tersetruktur dan mudah dipahami
 with open('number/31.txt', 'r') as f:
+    # variable 'data' -> bisa di panggil di bagian mana pun sesuka hati
     data = f.read().splitlines()
 
 
+"""
+data = [
+    'Saya memakan nasi goreng seharga Rp 15.000.', 
+    'Adik saya memakan pizza seharga Rp 300.000.', 
+    'Kakak saya memakan roti seharga Rp 10.000, Rp 5.000, dan Rp 25.000.', 
+    'Ibu saya memasak bubur dengan modal Rp 40.000.',
+    ]
+
+"""
+
+
+# pada bagian ini kita meng-iterasikan list-nya 1 per 1
 for x in data:
     raw_list = []
+    # string replacement untuk menghilangkan character yang tidak kita butuhkan
+    # kita gunakan split 'Adik saya memakan pizza seharga Rp 300.000.' pada string tsb untuk jadi list yg baru
     raw = x.replace(".", "").replace(",", "").split()
+    # setelah split -> ['Adik', 'saya', 'memakan', 'pizza', 'seharga', 'Rp', '300000']
+    # kita itter ulang di dalam for 'i'
     for i in raw:
+        # kita check disini apakah i yg telah di iter adalah digit atau numeric?
+        # kalau iya maka i kita jadikan integer
         if i.isdigit():
             i = int(i)
+        # saat if selasai di baca kita append data mentah kita yang ada di 'i' ke raw_list
         raw_list.append(i)
+    # saat looping kedua telah diselesaikan, maka data dari raw_list akan di append ke col_data
     col_data.append(raw_list)
 
 
@@ -84,8 +107,3 @@ if __name__ == '__main__':
             os.system('cls')
         else:
             print("give as the instruction! ")
-
-
-"""
-
-"""
