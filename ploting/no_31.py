@@ -1,9 +1,10 @@
 import os
 
+col_data = []
+
 with open('number/31.txt', 'r') as f:
     data = f.read().splitlines()
 
-col_data = []
 
 for x in data:
     raw_list = []
@@ -57,16 +58,34 @@ def high_freq():
         return active
 
 
+def word_start():
+    for outer in col_data:
+        for inner in outer:
+            inner = str(inner)
+            print(f"{inner} - starts with {inner[0]}")
+        print('')
+
+
 if __name__ == '__main__':
     while True:
-        print("1. how many integers when it calculated \n2. highest frequency word \n3. word_start \n4. exit")
+        print("1. how many integers when it calculated \n2. highest frequency word \n3. word_start \n4. exit \n5. clear")
         menu = int(input(">>> "))
 
-        if menu==1:
+        if menu == 1:
             print(total_num())
-        elif menu==2:
+        elif menu == 2:
             print(high_freq())
-        elif menu==4:
+        elif menu == 3:
+            word_start()
+        elif menu == 4:
             break
+        elif menu == 5:
+            # change the cls as your os command to clear screen
+            os.system('cls')
         else:
             print("give as the instruction! ")
+
+
+"""
+
+"""
