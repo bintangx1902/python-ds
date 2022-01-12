@@ -109,3 +109,12 @@ bmi = [weight_kg[x] / height_m[x] ** 2 for x in range(len(weight_lb) - 1)]
 weight_kg = np.array(weight_lb) * .453592
 height_m = np.array(height_in) * .0254
 bmi = weight_kg / height_m ** 2
+""" you can slice the numpy arrays like this """
+sliced = bmi[100:111]
+
+# print(f"{weight_kg} \n{height_m} \n{bmi}")
+
+""" this provide how to filter the bmi score below 21 """
+lite = bmi < 21
+print(bmi[lite])
+
