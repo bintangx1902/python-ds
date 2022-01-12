@@ -118,3 +118,14 @@ sliced = bmi[100:111]
 lite = bmi < 21
 print(bmi[lite])
 
+""" addition section """
+a = list(range(2, 23)) + [False, True, False]
+b = list(range(50, 71)) + [True, True, False]
+
+""" standard -> you must iter 1 by 1 index """
+c = [a[x] + b[x] for x in range(len(a))]
+# print(c)
+
+""" numpy logic is just like standard addition """
+c = np.array(a) + np.array(b)
+# print(c)
