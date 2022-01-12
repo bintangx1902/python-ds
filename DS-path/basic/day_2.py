@@ -27,3 +27,6 @@ bmi = weight_kg / height_m ** 2
 
 # print(f"{weight_kg} \n{height_m} \n{bmi}")
 
+""" this provide how to filter the bmi score below 21 """
+lite = bmi < 21
+print(bmi[lite])
