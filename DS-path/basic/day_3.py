@@ -3,7 +3,9 @@ import numpy as np
 """
 Day 3 Learning 2d numpy array 
 in the baseball list, first col-> height
-second -> weight
+second -> weight.
+
+uncomment the print if want to check out the result
 """
 
 # 3 col inside
@@ -68,7 +70,7 @@ baseball = [[74.0, 180.0, 22.99], [74.0, 215.0, 34.69], [72.0, 210.0, 30.78], [7
             [73.0, 220.0, 30.0], [72.0, 215.0, 33.09], [73.0, 185.0, 25.96]]
 
 baseball = np.array(baseball)
-print(baseball.shape)
+# print(baseball.shape)
 
 """ 50th row """
 print(baseball[49, :])
@@ -76,5 +78,18 @@ print(baseball[49, :])
 """ weight and height """
 baseball_weight = baseball[:, 1]
 baseball_height = baseball[:, 0]
-print(baseball_weight)
-print(baseball_height)
+# print(baseball_weight)
+# print(baseball_height)
+
+
+"""
+the baseball list is [height, weight, bmi] 
+we will convert height from inches to metres by multiply the number with 0.0254,
+weight from lb to kg -> multiply the number with 0.453592, and BMI score is same 
+"""
+
+# convert array
+convert = np.array([.0254, .453592, 1])
+
+baseball_converted = baseball * convert
+print(baseball_converted)
