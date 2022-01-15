@@ -70,7 +70,7 @@ if __name__ == '__main__':
         menu = int(input(">>> "))
 
         if menu == 1:
-            player()
+            print(player())
         elif menu == 2:
             winner()
         elif menu == 3:
