@@ -3,6 +3,9 @@ import numpy as np
 """
 day 3 learn
 using the other list as slice indexing
+
+positions = ['GK', 'M', 'A', 'D', ...]
+heights = [191, 184, 185, 180, ...]
 """
 
 
@@ -19,7 +22,7 @@ height = np.array([191, 184, 185, 180, 181, 187, 170, 179, 183, 186, 185, 170, 1
           182, 175, 173, 175, 176, 174, 184, 177, 185, 162, 180, 171, 183, 180, 180, 191, 196, 191, 176, 186, 171, 190,
           188, 180, 185, 176, 187, 188, 182, 178])
 position = np.array([
-    ['GK', 'M', 'A', 'D', 'M', 'D', 'M', 'M', 'M', 'A', 'M', 'M', 'A', 'A', 'A', 'M', 'D', 'A', 'D', 'M', 'GK', 'D',
+    'GK', 'M', 'A', 'D', 'M', 'D', 'M', 'M', 'M', 'A', 'M', 'M', 'A', 'A', 'A', 'M', 'D', 'A', 'D', 'M', 'GK', 'D',
      'D', 'M', 'M', 'M', 'M', 'D', 'M', 'GK', 'D', 'GK', 'D', 'D', 'M', 'A', 'M', 'D', 'M', 'GK', 'M', 'GK', 'A', 'D',
      'GK', 'A', 'GK', 'GK', 'GK', 'GK', 'A', 'D', 'A', 'D', 'D', 'M', 'D', 'M', 'D', 'D', 'GK', 'GK', 'D', 'M', 'M',
      'GK', 'M', 'D', 'M', 'M', 'D', 'D', 'M', 'M', 'D', 'A', 'A', 'M', 'M', 'M', 'A', 'D', 'D', 'A', 'A', 'M', 'M', 'M',
@@ -31,6 +34,10 @@ position = np.array([
      'A', 'GK', 'M', 'A', 'A', 'D', 'D', 'A', 'D', 'GK', 'D', 'M', 'D', 'D', 'M', 'M', 'GK', 'D', 'M', 'GK', 'GK', 'D',
      'M', 'D', 'D', 'M', 'A', 'D', 'D', 'M', 'A', 'A', 'A', 'A', 'A', 'M', 'D', 'D', 'A', 'M', 'GK', 'M', 'GK', 'A',
      'A', 'GK', 'M', 'D', 'M', 'D', 'D']
-    ])
+    )
 
+gk_height = height[position == 'GK']
+print(gk_height)
 
+other = height[position != 'GK']
+print(other)
