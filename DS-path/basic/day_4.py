@@ -45,6 +45,7 @@ print(other)
 
 """
 new section we learn about plot the data with matplotlib 
+use plt.show() to show up the plot
 """
 
 from matplotlib import pyplot as plt
@@ -69,9 +70,8 @@ population = [2.53, 2.57, 2.62, 2.67, 2.71, 2.76, 2.81, 2.86, 2.92, 2.97, 3.03, 
               10.68, 10.7, 10.72, 10.73, 10.75, 10.77, 10.78, 10.79, 10.81, 10.82, 10.83, 10.84, 10.85]
 
 plt.plot(year, population)
-
-""" use plt.show() to show up the plot """
 plt.show()
+
 
 gdp_cap = [974.5803384, 5937.029525999998, 6223.367465, 4797.231267, 12779.37964, 34435.367439999995, 36126.4927,
            29796.04834, 1391.253792, 33692.60508, 1441.284873, 3822.137084, 7446.298803, 12569.85177, 9065.800825,
@@ -107,5 +107,12 @@ life_exp = [43.828, 76.423, 72.301, 42.731, 75.32, 81.235, 79.829, 75.635, 64.06
             62.698, 42.38399999999999, 43.487]
 
 plt.plot(gdp_cap, life_exp)
+plt.show()
 
+"""
+same data but we will use the scatter plot and use x-axis as logarithmic scale
+"""
+
+plt.scatter(gdp_cap, life_exp)
+plt.xscale('log')
 plt.show()
