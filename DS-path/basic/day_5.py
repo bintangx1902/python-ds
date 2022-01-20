@@ -34,3 +34,11 @@ life_exp = [43.828, 76.423, 72.301, 42.731, 75.32, 81.235, 79.829, 75.635, 64.06
 
 plt.scatter(pop, life_exp)
 plt.show()
+
+
+"""
+new section i provide a histogram plot on life_exp
+"""
+
+plt.hist(life_exp)
+plt.show()
