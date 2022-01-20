@@ -38,7 +38,18 @@ plt.show()
 
 """
 new section i provide a histogram plot on life_exp
+and im gonna test with 5 bins and 20 bins
 """
 
 plt.hist(life_exp)
 plt.show()
+
+""" 5 bins """
+plt.hist(life_exp, bins=5)
+plt.show()
+plt.clf()
+
+""" 20 bins """
+plt.hist(life_exp, bins=20)
+plt.show()
+plt.clf()
