@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from day_5 import pop, life_exp
-from day_4 import gdp_cap
+from data.learn_list import pop, life_exp, gdp_cap
+
 
 """
 Day 6 learning provide x ticks using label and value for readable plot
